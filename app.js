@@ -4,6 +4,8 @@ const inputKilometers = document.getElementById('inputKilometers');
 const inputMiles = document.getElementById('inputMiles');
 const inputInches = document.getElementById('inputInches');
 const inputCentimeters = document.getElementById('inputCentimeters');
+const inputKilograms = document.getElementById('inputKilograms');
+const inputPounds = document.getElementById('inputPounds');
 
 inputCelcius.addEventListener('input', function CelciusToFahrenheit(celcius){
     const fahrenheit = ((celcius.target.value * 1.8) + 32);
@@ -14,7 +16,7 @@ inputCelcius.addEventListener('input', function CelciusToFahrenheit(celcius){
         returner.value = null;
     }else{
         returner.value;
-}
+    }
 })
 
 inputFahrenheit.addEventListener('input', function FahrenheitToCelcius(fahrenheit){
@@ -75,4 +77,28 @@ inputCentimeters.addEventListener('input', function CentimetersToInches(centimet
     }else{
         returner.value;
     }
-})
+});
+
+inputKilograms.addEventListener('input', function KilogramsToPounds(kilos){
+    const lbs = (kilos.target.value * 2.2046226218);
+    const returner = document.getElementById('returnKilograms');
+    returner.value = `${lbs} lbs.`;
+
+    if (inputKilograms.value.length == 0){
+        returner.value = null;
+    }else{
+        returner.value;
+    }
+});
+
+inputPounds.addEventListener('input', function PoundsToKilograms(lbs){
+    const kilos = (lbs.target.value * 0.4535924);
+    const returner = document.getElementById('returnPounds');
+    returner.value = `${kilos} kg.`;
+
+    if (inputPounds.value.length == 0){
+        returner.value = null;
+    }else{
+        returner.value;
+    }
+});
